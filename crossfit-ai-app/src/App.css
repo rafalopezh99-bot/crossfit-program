@@ -1,0 +1,188 @@
+.app {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  text-align: center;
+}
+
+.bottom-nav{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 100%;
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  border-top: 1px solid #333;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.profile {
+  width: 100%;
+  max-width: 360px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0 auto;
+}
+
+.profile h2 {
+  margin-bottom: 20px;
+}
+
+.profile input,
+.profile select {
+  width: 100%;
+  padding: 14px;
+  background-color: #222;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.profile button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.profile label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.benchmarks {
+
+  width: 100%;
+
+  max-width: 360px;
+
+  margin: 0 auto;
+
+ 
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+ 
+
+.benchmarks h2 {
+
+  margin-bottom: 20px;
+
+}
+
+ 
+
+.benchmarks input {
+
+  width: 100%;
+
+  padding: 14px;
+
+  background-color: #222;
+
+  color: white;
+
+  border: 1px solid #333;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  box-sizing: border-box;
+
+}
+
+ 
+
+.benchmarks label {
+
+  margin-top: 10px;
+
+  font-weight: bold;
+
+}
+
+ 
+
+.benchmarks button {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+}
+
+ 
+
+.save-benchmark-button {
+
+  background-color: #ff6b00;
+
+  color: white;
+
+}
+
+ 
+
+.history-button {
+
+  background-color: #333;
+
+  color: white;
+
+}
