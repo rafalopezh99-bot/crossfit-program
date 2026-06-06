@@ -167,7 +167,6 @@ h1 {
 
 }
 
- 
 
 .save-benchmark-button {
 
@@ -177,7 +176,6 @@ h1 {
 
 }
 
- 
 
 .history-button {
 
@@ -185,4 +183,93 @@ h1 {
 
   color: white;
 
+}
+
+.movement-card{
+  width: 100%;
+  padding: 14px;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.movement-history {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.movement-history h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.history-section,
+.chart-section,
+.percentages-section {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.history-section h3 {
+  color: #b6ff00;
+}
+
+.chart-section h3 {
+  color: #00c8ff;
+}
+
+.percentages-section h3 {
+  color: #ff6b00;
+}
+
+.movement-history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.movement-history th,
+.movement-history td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.movement-history td {
+  color: white;
+}
+
+.movement-history th {
+  background-color: #222;
+}
+
+.fake-chart {
+  height: 160px;
+  border: 1px dashed #00c8ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00c8ff;
+}
+
+.one-rm {
+  text-align: center;
+  font-size: 20px;
+  color: #ff6b00;
+  font-weight: bold;
+}
+
+.chart-container {
+  width: 100%;
+  height: 220px;
 }
