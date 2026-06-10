@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -16,6 +16,8 @@ import Perfil from "./pages/Perfil";
 
 import BottomNav from "./components/BottomNav";
 
+import Favoritos from "./pages/Favoritos";
+
 
 function App() {
 
@@ -30,6 +32,18 @@ function App() {
     }
   );
 
+  const [favoriteWods, setFavoriteWods] = useState(() => {
+    const savedFavorites = localStorage.getItem("favoriteWods");
+    return savedFavorites ? JSON.parse(savedFavorites) :[];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      "favoriteWods",
+      JSON.stringify(favoriteWods)
+    );
+  }, [favoriteWods]);
+
   return (
 
     <div className="app">
@@ -39,9 +53,22 @@ function App() {
       <div className="content">
 
         {screen === "home" && <Home user={user} />}
-        {screen === "wod" && <Wod />}
+        {screen === "wod" && (
+          <Wod
+            favoriteWods={favoriteWods}
+            setFavoriteWods={setFavoriteWods}          
+          />
+        )}
+
         {screen === "program" && <Program />}
         {screen === "pesos" && <Pesos />}
+        {screen === "favoritos" && (
+          <Favoritos 
+            favoriteWods={favoriteWods}
+            setFavoriteWods={setFavoriteWods} 
+          />
+        )}
+
         {screen === "perfil" && <Perfil user={user} setUser={setUser} />}
 
       </div>

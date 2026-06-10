@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
-function Wod() {
+function Wod({ favoriteWods, setFavoriteWods }) {
 
     const[peopleType, setPeopleType] = useState("Individual"); 
 
@@ -10,7 +10,12 @@ function Wod() {
 
     const [generatedWod, setGeneratedWod] = useState(null);
 
-    const [favoriteWods, setFavoriteWods] = useState([]);
+    useEffect(() => {
+        localStorage.setItem(
+            "favoriteWods",
+            JSON.stringify(favoriteWods)
+        );
+    }, [favoriteWods]);
 
     const [wodType, setWodType] = useState("AMRAP");
     const [duration, setDuration] = useState("");
@@ -43,7 +48,10 @@ function Wod() {
                     <p key={index}>{exercise}</p>
                 ))}
 
-                <button className="generate-wod-button">
+                <button 
+                    className="generate-wod-button"
+                    onClick={handleSaveFavoriteWod}
+                >
                     ⭐Guardar en favoritos⭐
                 </button>
 
@@ -73,6 +81,8 @@ function Wod() {
 
     function handleSaveFavoriteWod() {
         setFavoriteWods([...favoriteWods, generatedWod]);
+
+        alert("WOD guardado en favoritos");
     }
     
     return (

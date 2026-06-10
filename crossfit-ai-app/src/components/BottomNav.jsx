@@ -4,15 +4,17 @@ function BottomNav({ setScreen }) {
 
     <div className="bottom-nav">
 
-      <button onClick={() => setScreen("home")}>🏠 Welcome</button>
+      <button onClick={() => setScreen("home")}>🏠</button>
 
-      <button onClick={() => setScreen("wod")}>🏋️ WOD</button>
+      <button onClick={() => setScreen("wod")}>🏋️</button>
 
-      <button onClick={() => setScreen("program")}>📋 Program</button>
+      <button onClick={() => setScreen("program")}>📋</button>
 
-      <button onClick={() => setScreen("pesos")}>📈 Benchmarks</button>
+      <button onClick={() => setScreen("pesos")}>📈</button>
 
-      <button onClick={() => setScreen("perfil")}>👤 Profile</button>
+      <button onClick={() => setScreen("favoritos")}>⭐</button>
+
+      <button onClick={() => setScreen("perfil")}>👤</button>
 
     </div>
 

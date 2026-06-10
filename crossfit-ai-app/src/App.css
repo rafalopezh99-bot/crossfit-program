@@ -46,7 +46,7 @@ h1 {
   background: none;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 28px;
   cursor: pointer;
   min-width: 0;
 }
@@ -369,4 +369,12 @@ h1 {
 .wod-result h2, 
 .wod-result h3 {
   text-align: center;
+}
+
+.favorite-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
 }
