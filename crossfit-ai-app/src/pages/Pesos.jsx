@@ -219,53 +219,59 @@ function Pesos() {
                 <section className="history-section">
                     <h3>Histórico</h3>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Reps</th>
-                                <th>Weight</th>
-                                <th>1RM</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
+                    <div className="table-wrapper">
 
-                        <tbody>
-                            {movementBenchmarks.map((benchmark, index) => {
-                                const estimatedOneRM =
-                                    benchmark.reps === 1
-                                        ? benchmark.kg
-                                        : Math.round(benchmark.kg * (1 + benchmark.reps / 30));
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Reps</th>
+                                    <th>Weight</th>
+                                    <th>1RM</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
 
-                                return (
-                                    <tr key={index}>
-                                        <td>{benchmark.date.split("-").reverse().join("/")}</td>
-                                        <td>{benchmark.reps}</td>
-                                        <td>{benchmark.kg} kg</td>
-                                        <td>{estimatedOneRM} kg</td>
-                                        <td>
-                                             <button
-                                                type="button"
-                                                className="edit-button"
-                                                onClick={() => handleEditBenchmark(benchmark.originalIndex)}
-                                            >
-                                                📝
-                                            </button>
+                            <tbody>
+                                {movementBenchmarks.map((benchmark, index) => {
+                                    const estimatedOneRM =
+                                        benchmark.reps === 1
+                                            ? benchmark.kg
+                                            : Math.round(benchmark.kg * (1 + benchmark.reps / 30));
 
-                                            <button
-                                                type="button"
-                                                className="delete-button"
-                                                onClick={() => handleDeleteBenchmark(benchmark.originalIndex)}
-                                            >
-                                                🗑️
-                                            </button>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                                    return (
+                                        <tr key={index}>
+                                            <td>{benchmark.date.split("-").reverse().join("/")}</td>
+                                            <td>{benchmark.reps}</td>
+                                            <td>{benchmark.kg} kg</td>
+                                            <td>{estimatedOneRM} kg</td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    className="edit-button"
+                                                    onClick={() => handleEditBenchmark(benchmark.originalIndex)}
+                                                >
+                                                    📝
+                                                </button>
 
-                        </tbody>
-                    </table>
+                                                <button
+                                                    type="button"
+                                                    className="delete-button"
+                                                    onClick={() => handleDeleteBenchmark(benchmark.originalIndex)}
+                                                >
+                                                    🗑️
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>                    
+
                 </section>
 
                 <section className="chart-section">
