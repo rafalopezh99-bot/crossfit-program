@@ -59,24 +59,35 @@ function Wod({ favoriteWods, setFavoriteWods }) {
         );
     }
 
-    function handleGenerateWod() {
-        const newWod = {
-            name: "WOD del día",
+    async function handleGenerateWod() {
+        const response = await fetch("/api/generate-wod", {
+            method: "POST",
+            headers: {
+                "content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                wodType,
+                duration,
+                objective,
+                level,
+                peopleType,
+                requiredElements,
+                excludedElements,
+            }),
+        });
+
+        const data = await response.json();
+
+        setGeneratedWod({
+            name: "WOD Gemini",
             type: wodType,
             duration: duration,
-            objective: objective, 
-            level: level, 
-            requiredElements: requiredElements,
-            excludedElements: excludedElements,
-            workout: [
-                "10 wall balls",
-                "15 Dumbbell Snatch",
-                "20 Sit ups",
-            ],
-        };
+            objective: objective,
+            workout: [isDataAttribute.wod],
+        });
 
-        setGeneratedWod(newWod);
-        setView("result");
+        svgPropertiesNoEventsFromUnknown("result");
+        
     }
 
     function handleSaveFavoriteWod() {

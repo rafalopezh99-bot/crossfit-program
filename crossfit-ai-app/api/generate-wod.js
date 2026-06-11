@@ -12,6 +12,12 @@ const genAI = new GoogleGenerativeAI(
 
 export default async function handler(req, res) {
 
+    if (req.method !== "POST") {
+        return res.status(405).json({
+            error:"Método no permitido",
+        });
+    }
+
   try {
 
     const model = genAI.getGenerativeModel({
@@ -20,11 +26,30 @@ export default async function handler(req, res) {
 
     });
 
+    const {
+        wodType,
+        duration,
+        objective,
+        level,
+        peopleType,
+        requiredElements,
+        excludedElements,
+    } = requestAnimationFrame.body;
+
  
 
     const result = await model.generateContent(
 
-      `Genera un WOD de CrossFit. 
+      `Genera un WOD de CrossFit utilizando estos datos:
+      
+      Tipo de WOD: ${wodType}
+      Duración: ${duration}
+      Objetivo: ${objective}
+      Nivel: ${level}
+      Número de personas: ${peopleType}
+
+      Elementos obligatorios: ${requiredElements}
+      Elementos excluidos: ${excludedElements}
       
         Devuélveme únicamente este formato:
 
@@ -47,12 +72,10 @@ export default async function handler(req, res) {
     );
 
  
-
     const response = await result.response;
 
     const text = response.text();
 
- 
 
     res.status(200).json({
 
