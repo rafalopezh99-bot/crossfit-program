@@ -24,8 +24,26 @@ export default async function handler(req, res) {
 
     const result = await model.generateContent(
 
-      "Genera un WOD de CrossFit AMRAP de 20 minutos con nombre creativo, ejercicios y explicación breve."
+      `Genera un WOD de CrossFit. 
+      
+        Devuélveme únicamente este formato:
 
+        Nombre: (Nombre del WOD)
+
+        Tipo: (Tipo de WOD)
+
+        WOD: 
+
+        (Lista de ejercicios)
+
+        No expliques nada.
+        No añadas estrategia.
+        No añadas pacing.
+        No añadas escalados.
+        No añadas texto adicional
+
+        Usa formato limmpio y corto.    
+      `
     );
 
  
