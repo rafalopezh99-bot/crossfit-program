@@ -62,7 +62,6 @@ export default async function handler(req, res) {
         No expliques nada.
         No añadas estrategia.
         No añadas pacing.
-        No añadas escalados.
         No añadas texto adicional
 
         Usa formato limmpio y corto.    

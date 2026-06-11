@@ -83,7 +83,8 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             type: wodType,
             duration: duration,
             objective: objective,
-            workout: [data.wod],
+            level: level,
+            workout: data.wod.split("\n")
         });
 
         setView("result");
