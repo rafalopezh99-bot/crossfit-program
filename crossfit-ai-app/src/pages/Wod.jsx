@@ -83,10 +83,10 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             type: wodType,
             duration: duration,
             objective: objective,
-            workout: [isDataAttribute.wod],
+            workout: [data.wod],
         });
 
-        svgPropertiesNoEventsFromUnknown("result");
+        set("result");
         
     }
 
