@@ -86,7 +86,7 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             workout: [data.wod],
         });
 
-        set("result");
+        setView("result");
         
     }
 
