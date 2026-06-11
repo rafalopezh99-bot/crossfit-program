@@ -78,13 +78,18 @@ function Wod({ favoriteWods, setFavoriteWods }) {
 
         const data = await response.json();
 
+        if (!data.wod) {
+            alert("Error generando el WOD, inténtelo de neuvo");
+            return;
+        }
+
         setGeneratedWod({
             name: "WOD Gemini",
             type: wodType,
             duration: duration,
             objective: objective,
             level: level,
-            workout: data.wod.split("\n")
+            workout: data.wod.split("\n").filter(line => line.trim() !== "")
         });
 
         setView("result");
