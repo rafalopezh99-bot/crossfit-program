@@ -6,7 +6,7 @@ function Wod({ favoriteWods, setFavoriteWods }) {
 
     const[peopleType, setPeopleType] = useState("Individual"); 
 
-    const [view, setView] = useState("form");
+    const [view, setView] = useState("form"); 
 
     const [generatedWod, setGeneratedWod] = useState(null);
 
