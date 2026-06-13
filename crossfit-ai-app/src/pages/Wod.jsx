@@ -66,7 +66,7 @@ function Wod({ favoriteWods, setFavoriteWods }) {
         const response = await fetch("/api/generate-wod", {
             method: "POST",
             headers: {
-                "content-Type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 wodType,
