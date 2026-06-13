@@ -83,10 +83,10 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             return;
         }
 
-        const wodLines = isDataAttribute.wod.split("\n");
+        const wodLines = data.wod.split("\n");
 
         const wodNameLine = wodLines.find((line) =>
-            computeLinePoints.startsWith("nombre")
+            line.startsWith("Nombre:")
         );
 
         const wodName = wodNameLine
