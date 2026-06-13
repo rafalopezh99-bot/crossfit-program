@@ -79,17 +79,27 @@ function Wod({ favoriteWods, setFavoriteWods }) {
         const data = await response.json();
 
         if (!data.wod) {
-            alert("Error generando el WOD, inténtelo de neuvo");
+            alert("Error generando el WOD, inténtelo de nuevo");
             return;
         }
 
+        const wodLines = isDataAttribute.wod.split("\n");
+
+        const wodNameLine = wodLines.find((line) =>
+            computeLinePoints.startsWith("nombre")
+        );
+
+        const wodName = wodNameLine
+            ? wodNameLine.replace("Nombre:", "").trim()
+            : "WOD Gemini";
+
         setGeneratedWod({
-            name: "WOD Gemini",
+            name: wodName,
             type: wodType,
             duration: duration,
             objective: objective,
             level: level,
-            workout: data.wod.split("\n").filter(line => line.trim() !== "")
+            workout: wodLines,
         });
 
         setView("result");
