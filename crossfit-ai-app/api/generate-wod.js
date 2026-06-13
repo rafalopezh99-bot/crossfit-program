@@ -52,17 +52,15 @@ export default async function handler(req, res) {
         Devuélveme únicamente este formato:
 
         Nombre: (Nombre del WOD)
-
         Tipo: (Tipo de WOD)
-
         WOD: 
-
         (Lista de ejercicios)
 
         No expliques nada.
         No añadas estrategia.
         No añadas pacing.
         No añadas texto adicional
+        No añadas líneas entre texto.
 
         Usa formato limmpio y corto.    
       `

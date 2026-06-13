@@ -41,13 +41,17 @@ function Wod({ favoriteWods, setFavoriteWods }) {
                     {generatedWod.type} {generatedWod.duration} min
                 </h3>
 
-                <p><strong>Objetivo: </strong>{generatedWod.objective}</p>
-                <p><strong>Nivel: </strong>{generatedWod.level}</p>
-
-                {generatedWod.workout.map((exercise, index) => (
+               {generatedWod.workout
+                .filter((line) =>
+                    line.trim() !== "" &&
+                    !line.startsWith("Nombre:") &&
+                    !line.startsWith("Tipo:") &&
+                    !line.startsWith("WOD:")
+                )
+                .map((exercise, index) => (
                     <p key={index}>{exercise}</p>
                 ))}
-
+                
                 <button 
                     className="generate-wod-button"
                     onClick={handleSaveFavoriteWod}
