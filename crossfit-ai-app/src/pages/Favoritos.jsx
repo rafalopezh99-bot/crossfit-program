@@ -35,8 +35,6 @@ function Favoritos({ favoriteWods, setFavoriteWods }) {
 
                 <h3>{selectedWod.type} {selectedWod.duration} min</h3>
 
-                <p><strong>Objetivo: </strong>{selectedWod.objective}</p>
-
                 {selectedWod.workout.map((exercise, index) => (
                     <p key={index}>{exercise}</p>
                 ))}
@@ -58,8 +56,6 @@ function Favoritos({ favoriteWods, setFavoriteWods }) {
                         <h3>{wod.name}</h3>
 
                         <p>{wod.type} {wod.duration} min</p>
-
-                        <p>{wod.objective}</p>
 
                         <button
                             className="edit-button"

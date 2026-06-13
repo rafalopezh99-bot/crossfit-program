@@ -27,7 +27,6 @@ export default async function handler(req, res) {
     const {
         wodType,
         duration,
-        objective,
         level,
         peopleType,
         requiredElements,
@@ -42,7 +41,6 @@ export default async function handler(req, res) {
       
       Tipo de WOD: ${wodType}
       Duración: ${duration}
-      Objetivo: ${objective}
       Nivel: ${level}
       Número de personas: ${peopleType}
 

@@ -19,7 +19,6 @@ function Wod({ favoriteWods, setFavoriteWods }) {
 
     const [wodType, setWodType] = useState("AMRAP");
     const [duration, setDuration] = useState("");
-    const [objective, setObjective] = useState("Metcon");
     const [level, setLevel] = useState("Escalado");
     const [requiredElements, setrequiredElements] = useState("");
     const [excludedElements, setexcludedElements] = useState("");
@@ -51,7 +50,7 @@ function Wod({ favoriteWods, setFavoriteWods }) {
                 .map((exercise, index) => (
                     <p key={index}>{exercise}</p>
                 ))}
-                
+
                 <button 
                     className="generate-wod-button"
                     onClick={handleSaveFavoriteWod}
@@ -72,7 +71,6 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             body: JSON.stringify({
                 wodType,
                 duration,
-                objective,
                 level,
                 peopleType,
                 requiredElements,
@@ -101,7 +99,6 @@ function Wod({ favoriteWods, setFavoriteWods }) {
             name: wodName,
             type: wodType,
             duration: duration,
-            objective: objective,
             level: level,
             workout: wodLines,
         });
@@ -175,18 +172,6 @@ function Wod({ favoriteWods, setFavoriteWods }) {
                 value={duration}
                 onChange={(e) => setDuration(e.target.value)}
             />
-
-            <label>Objetivo</label>
-
-            <select
-                value={objective}
-                onChange={(e) => setObjective(e.target.value)}
-            >
-                <option>Metcon</option>
-                <option>Cardio</option>
-                <option>Gimnásticos</option>
-                <option>Fuerza</option>
-            </select>
 
             <label>Nivel</label>
 
