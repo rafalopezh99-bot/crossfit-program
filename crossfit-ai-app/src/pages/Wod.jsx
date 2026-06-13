@@ -88,12 +88,12 @@ function Wod({ favoriteWods, setFavoriteWods }) {
         const wodLines = data.wod.split("\n");
 
         const wodNameLine = wodLines.find((line) =>
-            line.startsWith("Nombre:")
+            line.toLowerCase().startsWith("Nombre:")
         );
 
         const wodName = wodNameLine
-            ? wodNameLine.replace("Nombre:", "").trim()
-            : "WOD Gemini";
+            ? wodNameLine.replace("/nombre:/i", "").trim()
+            : "WOD generado";
 
         setGeneratedWod({
             name: wodName,
