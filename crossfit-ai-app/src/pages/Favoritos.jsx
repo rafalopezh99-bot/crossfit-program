@@ -10,9 +10,11 @@ function Favoritos({ favoriteWods, setFavoriteWods }) {
 
         if (!confirmDelete) return;
 
-        setFavoriteWods(
-            favoriteWods.filter((_, index) => index !== indexToDElete)
+        const updatedFavorites = favoriteWods.filter(
+            (_, index) => index !== indexToDelete
         );
+
+        setFavoriteWods(updatedFavrites);
     };
 
     const [selectedWod, setSelectedWod] = useState(null);
