@@ -14,7 +14,7 @@ function Favoritos({ favoriteWods, setFavoriteWods }) {
             (_, index) => index !== indexToDelete
         );
 
-        setFavoriteWods(updatedFavrites);
+        setFavoriteWods(updatedFavorites);
     };
 
     const [selectedWod, setSelectedWod] = useState(null);
